@@ -1,0 +1,49 @@
+﻿@model CmsShoppingCart.Models.Data.UserCardInfo
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Payment</h2>
+
+<br />
+
+@using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+{
+    var yearList = new List<int>();
+    var monthList = new List<int>();
+    for (var i = 1; i <= 12; i++) { monthList.Add(i); }
+    for (var i = 2017; i <= 2030; i++) { yearList.Add(i); }
+
+    @Html.Label("Kart Numarası")
+    <br />
+    <br />
+    @Html.TextBox("CardNumber")
+    <br />
+    <br />
+    @Html.Label("CV")
+    <br />
+    <br />
+    @Html.TextBox("SecurityNumber")
+    <br />
+    <br />
+    @Html.Label("Kart Sahibi")
+    <br />
+    <br />
+    @Html.TextBox("CardHasName")
+    <br />
+    <br />
+    @Html.Label("Ay")
+    <br />
+    <br />
+    @Html.DropDownList("ExpMonth", new SelectList(monthList))
+    <br />
+    <br />
+    @Html.Label("Yıl")
+    <br />
+    <br />
+    @Html.DropDownList("ExpYear", new SelectList(yearList))
+        <br />
+        <br />
+        <br />
+        <input type="submit" value="Satışı Tamamla" />
+}

@@ -1,0 +1,15 @@
+﻿@model CmsShoppingCart.Models.ViewModels.Cart.CartVM
+
+
+
+
+<div class="ajaxcart" style="color:white;">
+    <div class="pull-right">
+        <span class="btn btn-mini btn-primary">
+            <i class="icon-shopping-cart icon-white"></i>
+            Your cart: @Model.Quantity item(s) - $@Model.Price
+        </span>
+        &nbsp;
+            @Html.ActionLink("Checkout", "Index")
+</div>
+</div>
